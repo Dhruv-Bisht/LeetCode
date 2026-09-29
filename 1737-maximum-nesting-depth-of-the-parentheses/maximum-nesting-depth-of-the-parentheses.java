@@ -17,15 +17,17 @@ class Solution {
         int ans = 0;
         int openBracket = 0;
 
-        for(Character c : s.toCharArray()){
+        for(int i=0; i<s.length(); i++){
+            char c = s.charAt(i);
             if(c == '('){
                 openBracket++;
+                ans = Math.max(ans,openBracket);
             }
             else if(c == ')'){
                 openBracket--;
             }
 
-            ans = Math.max(ans,openBracket);
+            
         }
         return ans;
     }
