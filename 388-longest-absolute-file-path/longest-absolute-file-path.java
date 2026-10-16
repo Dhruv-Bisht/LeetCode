@@ -3,7 +3,7 @@ class Solution {
             HashMap<Integer, Integer> map = new HashMap<>();
             map.put(0,0);
             int maxLen = 0;
-
+            if(input.length() == 0) return 0;
             for(String name: input.split("\n")){
                 String file = name.replace("\t","");
                 int depth = name.length()-file.length();
