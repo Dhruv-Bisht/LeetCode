@@ -15,12 +15,12 @@ class Solution {
         else{
             for(String neighbour: map.get(src).keySet()){
                 if(! visited.contains(neighbour)){
-                        res = DFS(neighbour, 
-                                target, 
-                                prod*map.get(src).get(neighbour), 
-                                visited,
-                                map
-                        );
+                    res = DFS(neighbour, 
+                            target, 
+                            prod*map.get(src).get(neighbour), 
+                            visited,
+                            map
+                    );
                     
                     if(res != -1.0){
                         break;
@@ -34,7 +34,7 @@ class Solution {
 
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
 
-
+        // create adjancey matrix.
         HashMap<String,HashMap<String, Double>> map = new HashMap<>();
 
         for(int i=0; i<equations.size(); i++){
