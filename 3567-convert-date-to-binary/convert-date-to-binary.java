@@ -8,6 +8,7 @@ class Solution {
             if(i != parts.length-1){
                 sb.append("-");
             }
+            // sb.append("-");
         }
         return sb.toString();
     }
