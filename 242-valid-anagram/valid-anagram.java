@@ -34,14 +34,24 @@ class Solution {
         int[] frequency = new int[26];
 
         // Increment Value
-        for(int i=0; i<s.length(); i++){
-            char character = s.charAt(i);
+        
+        // for(int i=0; i<s.length(); i++){
+        //     char character = s.charAt(i);
+        //     frequency[character - 'a']++;
+        // }
+
+        for(char character: s.toCharArray()){
             frequency[character - 'a']++;
         }
 
         // Decrement Value
-        for(int i=0; i<t.length(); i++){
-            char character = t.charAt(i);
+
+        // for(int i=0; i<t.length(); i++){
+        //     char character = t.charAt(i);
+        //     frequency[character - 'a']--;
+        // }
+
+        for(char character: t.toCharArray()){
             frequency[character - 'a']--;
         }
 
