@@ -1,25 +1,25 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        HashMap<Character, Integer> map = new HashMap<>();
-        int maxLength = 0;
-        int left = 0; // Left boundary of the sliding window
-
-        for (int right = 0; right < s.length(); right++) {
-            char currentChar = s.charAt(right);
-
-            // If the character is already in the map and within the current window
-            if (map.containsKey(currentChar)) {
-                // Move the left pointer past the last seen index of this character
-                left = Math.max(left, map.get(currentChar) + 1);
-            }
-
-            // Update or add the character's most recent index
-            map.put(currentChar, right);
-
-            // Calculate the current window size and update the maximum length
-            maxLength = Math.max(maxLength, right - left + 1);
+        int n = s.length();
+        int len = 0, maxLen = 0;
+        int[] hashArray = new int[255];
+        int left = 0, right = 0;
+        for(int i=0; i<255; i++){
+            hashArray[i] = -1;
         }
-
-        return maxLength;
+        while(right < n){
+            if(hashArray[s.charAt(right)] != -1){
+                // the number exists
+                if(hashArray[s.charAt(right)] >= left){
+                    // found duplicate
+                    left = hashArray[s.charAt(right)] + 1;
+                }
+            }
+            len = right - left + 1;
+            maxLen = Math.max(len, maxLen);
+            hashArray[s.charAt(right)] = right;
+            right++;
+        }
+        return maxLen;
     }
 }
