@@ -11,7 +11,7 @@ class Solution {
             if(hashArray[s.charAt(right)] != -1){
                 // the number exists
                 if(hashArray[s.charAt(right)] >= left){
-                    // found duplicate
+                    // found duplicate. New left position
                     left = hashArray[s.charAt(right)] + 1;
                 }
             }
